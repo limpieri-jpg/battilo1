@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Battilo — Aste tra Privati</title>
-<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-</head>
-<body>
-<div id="root"></div>
-<script type="text/babel" data-type="module">
-// React loaded via CDN
+import React, { useState, useEffect } from "react";
 
 const ROYALTY_MOBILE = 8;    // Commissione beni MOBILI (%) — a carico acquirente
 
@@ -1896,7 +1883,7 @@ function AdminPanel({ onBack, registeredUsers: propUsers, setRegisteredUsers }) 
 }
 
 /* ─── APP ─── */
-window.__BattiloApp = function App() {
+export default function App() {
   const [page, setPage] = useState("home");
   const [selItem, setSelItem] = useState(null);
   const [filter, setFilter] = useState("Tutto");
@@ -2139,9 +2126,3 @@ window.__BattiloApp = function App() {
     </div>
   );
 }
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(React.createElement(window.__BattiloApp));
-</script>
-</body>
-</html>
